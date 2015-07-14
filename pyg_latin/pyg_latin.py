@@ -2,7 +2,7 @@ def welcome():
     welcome_msg = """
     =======================================
     Sup, Scrub.
-    Welcome to Pig Latin 101 taught by yours trully, Comrade Doge.
+    Welcome to Pig Latin 101 taught by yours truly, Comrade Doge.
     =======================================
     """
     print(chr(27) + "[2J")
@@ -18,9 +18,9 @@ def to_pyg():
         new_word = new_word[0:len(new_word)]
         print """
 
-        That's a cool word, Scrub, here it is in Pig Latin: """ + new_word[1:len(new_word)]+ """
+        That's a cool word, Scrub, here it is in Pig Latin: %s
 
-        """
+              """ % new_word[1:len(new_word)]
         to_pyg()
     elif to_quit(original) == False:
         print """                 ============================
