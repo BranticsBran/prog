@@ -1,9 +1,21 @@
+def welcome():
+    welcome_msg = """
+    =======================================
+    Sup, Scrub.
+    Welcome to Pyg Latin 101 taught by yours trully, Comrade Doge.
+    =======================================
+    """
+    print(chr(27) + "[2J")
+    print welcome_msg
 
 def to_pyg():
     original = get_user_input()
     if is_valid(original) and to_quit(original):
         pyg = 'ay'
-        print "That's a cool word, Nerd, here it is in Pyg Latin."
+        print """
+        That's a cool word, Scrub, here it is in Pyg Latin:
+
+        """
         word = original.lower()
         first = word[0]
         new_word = word + first + pyg
@@ -11,7 +23,7 @@ def to_pyg():
         print new_word[1:len(new_word)]
         to_pyg()
     elif to_quit(original) == False:
-        print 'Peace out, scrublord.'
+        print 'Peace out, Scrublord.'
         return
     else:
         error()
@@ -34,4 +46,8 @@ def to_quit(x):
 def get_user_input():
     return raw_input('Enter a word or "QUIT" to Quit:')
 
-to_pyg()
+def loop():
+    welcome()
+    to_pyg()
+
+loop()
