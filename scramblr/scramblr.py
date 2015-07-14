@@ -22,7 +22,7 @@ def scrambl():
     inp = raw_input('Please enter an encryption key:  ')
     data = raw_input('Enter unencrypted data:  ')
     scrambl = encrypt(inp, data)
-    f = open('cache/bc.store','w')
+    f = open('cache/bc.store','w+')
     f.write(scrambl) # python will convert \n to os.linesep
     f.close()
     scramblr()
@@ -30,10 +30,12 @@ def d_scrambl():
     inp = raw_input('Please enter an encryption key:  ')
     file = open('cache/bc.store','r')
     data = file.read()
-    scrambl = decrypt(inp, data)
+    file.close()
+    raw_text = decrypt(inp, data)
 
-    d_file = open('cache/ad.store','w')
-    d_file.write(scrambl)
+    dfile = open('cache/ad.store','w+')
+    dfile.write(raw_text)
+    dfile.close()
     scramblr()
 
 
