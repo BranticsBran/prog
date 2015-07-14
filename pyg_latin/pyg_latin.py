@@ -2,7 +2,7 @@ def welcome():
     welcome_msg = """
     =======================================
     Sup, Scrub.
-    Welcome to Pyg Latin 101 taught by yours trully, Comrade Doge.
+    Welcome to Pig Latin 101 taught by yours trully, Comrade Doge.
     =======================================
     """
     print(chr(27) + "[2J")
@@ -15,10 +15,10 @@ def to_pyg():
         word = original.lower()
         first = word[0]
         new_word = word + first + pyg
-        new_word = new_word[1:len(new_word)]
+        new_word = new_word[0:len(new_word)]
         print """
 
-        That's a cool word, Scrub, here it is in Pyg Latin: """ + new_word[1:len(new_word)]+ """
+        That's a cool word, Scrub, here it is in Pig Latin: """ + new_word[1:len(new_word)]+ """
 
         """
         to_pyg()
@@ -31,7 +31,12 @@ def to_pyg():
         error()
 
 def error():
-        print "Hey! You didn't type anything or you have a character at isn't a letter in your word, Scrub! Try again!"
+        print """
+        =================================================================================================
+        Hey! You didn't type anything, or you have a character at isn't a letter in your word! Try again!
+                                       (spaces included)
+        =================================================================================================
+              """
         to_pyg()
 
 def is_valid(x):
@@ -40,13 +45,13 @@ def is_valid(x):
     else:
         return False
 def to_quit(x):
-    if x == 'QUIT':
+    if x == 'Z':
         return False
     else:
         return True
 
 def get_user_input():
-    return raw_input('Enter a word or "QUIT" to Quit:')
+    return raw_input('Enter a word or "Z" to Quit:')
 
 def loop():
     welcome()
