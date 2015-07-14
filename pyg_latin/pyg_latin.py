@@ -12,18 +12,20 @@ def to_pyg():
     original = get_user_input()
     if is_valid(original) and to_quit(original):
         pyg = 'ay'
-        print """
-        That's a cool word, Scrub, here it is in Pyg Latin:
-
-        """
         word = original.lower()
         first = word[0]
         new_word = word + first + pyg
         new_word = new_word[1:len(new_word)]
-        print new_word[1:len(new_word)]
+        print """
+
+        That's a cool word, Scrub, here it is in Pyg Latin: """ + new_word[1:len(new_word)]+ """
+
+        """
         to_pyg()
     elif to_quit(original) == False:
-        print 'Peace out, Scrublord.'
+        print """                 ============================
+                    Peace out, Scrublord.
+                 ============================"""
         return
     else:
         error()
