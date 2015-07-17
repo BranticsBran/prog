@@ -56,5 +56,3 @@ def get_user_input():
 def loop():
     welcome()
     to_pyg()
-
-loop()

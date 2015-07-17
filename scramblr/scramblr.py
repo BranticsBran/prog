@@ -52,5 +52,3 @@ def scramblr():
 def loop():
     welcome()
     scramblr()
-
-loop()
